@@ -8,6 +8,10 @@ app.use("/Books",bookRoutes)
 
 app.use(express.json)
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+app.get('/', (req, res) => {
+  res.send('Books API is running!');
+});
+
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server running on port ${port}`);
 })
